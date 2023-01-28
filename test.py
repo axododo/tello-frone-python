@@ -31,12 +31,6 @@ def video():
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
-# libérer les ressources
-        cv2.destroyAllWindows()
-        frame.stop()
-        drone.streamoff()
-        drone.end()
-
 
 while True:
     video()
@@ -86,6 +80,12 @@ while True:
 
     # détecter les touches du clavier
 
+
+# libérer les ressources
+cv2.destroyAllWindows()
+frame.stop()
+    drone.streamoff()
+        drone.end()
 
 # se déconnecter du drone
 drone.end()
